@@ -20,13 +20,9 @@ def troublesort(l):
     return l
 
 def interleave_sort(l):
-    a = l[::2]
-    b = l[1::2]
-    a.sort()
-    b.sort()
+    a, b = sorted(l[::2]), sorted(l[1::2])
     c = [None] * (len(a) + len(b))
-    c[::2] = a
-    c[1::2] = b
+    c[::2], c[1::2] = a, b
     return c
 
 def evaluate_sort(sorted_l):
